@@ -123,22 +123,24 @@ function articleMaker({articleObj}) {
 
   article.classList.add('article');
   articleDate.classList.add('date');
+  expButton.classList.add('expandButton')
 
-  articleTitle.textContent = data[title];
-  articleDate.textContent = data[date];
-  paragraph1.textContent = data[firstParagraph];
-  paragraph2.textContent = data[secondParagraph];
-  paragraph3.textContent = data[thirdParagraph];
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  paragraph1.textContent = firstParagraph
+  paragraph2.textContent = secondParagraph
+  paragraph3.textContent = thirdParagraph
   expButton.textContent = '+';
 
   expButton.addEventListener('click', () => {
     article.classList.toggle('article-open');
-  })
+  });
 
   return article
 }
-
-
+data.forEach(function (item, index, arr) {
+  articleMaker(data[item, index]);
+});
 
   /* Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
